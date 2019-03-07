@@ -1,16 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const ListViewItem = (props) => {
     const { description, image, name, price } = props;
     return (
         <div className="card mb-3 custom-card-order">
             <h4 className="card-header">{ name }</h4>
-            <img src={ image } alt="Card image" />
+            <Link to={ "/bubbles/" + props.id }><img src={ image } alt="Card image" /></Link>
             <div className="card-body">
                 <p className="card-text">{ description }</p>
             </div>
-            <div class="card-footer text-muted">
+            <div className="card-footer text-muted">
               Price: { price } kr.
             </div>
         </div>

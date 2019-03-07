@@ -1,5 +1,6 @@
 // You can add styles here
 body {
+    background-color: rgba(190, 190, 190, 1);
     .navigation-bar {
         display: block;
         height: 150px;
@@ -17,8 +18,21 @@ body {
     }
 }
 
+.nav-background {
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    background-color: rgba(50, 50, 50, 1);
+    color: white;
+}
+
+.nav-tabs .nav-link, .nav-tabs .nav-link.disabled, .nav-tabs .nav-link.disabled:hover, .nav-tabs .nav-link.disabled:focus {
+    background-color: rgba(50, 50, 50, 1);
+}
+
 .container {
-    margin-top: 10px;
 }
 
 .card-image-custom {
@@ -33,6 +47,7 @@ body {
 }
 
 .custom-card-order {
+    margin-top: 10px;
     display: flex;
     width: 30%;
 }

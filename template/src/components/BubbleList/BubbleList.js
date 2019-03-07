@@ -3,7 +3,7 @@ import ListView from "../ListView/ListView";
 import bubbleService from "../../services/bubbleService";
 import { BubblesProvider } from "../../context/BubblesContext";
 
-class Container  extends React.Component {
+class BubbleList  extends React.Component {
     componentDidMount() {
         bubbleService.getAllBubbles().then(data => this.setState({ bubbles: data }));
     }
@@ -22,4 +22,4 @@ class Container  extends React.Component {
     }
 };
 
-export default Container;
+export default BubbleList;

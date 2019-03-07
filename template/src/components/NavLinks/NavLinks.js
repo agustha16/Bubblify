@@ -1,20 +1,21 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavLinks = () => {
     return (
         <ul className="nav nav-tabs">
             <img className="nav-item logo-icon" src="../../../resources/Logo.png" alt="Card image" />
             <li className="nav-item">
-                <a className="nav-link active" data-toggle="tab" href="#">Products</a>
+                <NavLink exact to="/bubbles" className="nav-link" data-toggle="tab">Products</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-toggle="tab" href="#">Bundles</a>
+                <NavLink exact to="/bundles" className="nav-link" data-toggle="tab">Bundles</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-toggle="tab" href="#">About us</a>
+                <NavLink exact to="/about" className="nav-link" data-toggle="tab">About us</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" data-toggle="tab" href="#">Cart</a>
+                <NavLink exact to="/cart" className="nav-link" data-toggle="tab">Cart</NavLink>
             </li>
         </ul>
     );

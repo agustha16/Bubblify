@@ -1,5 +1,5 @@
 import React from "react"
-import ListView from "../ListView/ListView";
+import BundleListView from "../BundleListView/BundleListView";
 import bundleService from "../../services/bundleService";
 import { BundlesProvider } from "../../context/BundlesContext";
 
@@ -14,11 +14,10 @@ class BundleList  extends React.Component {
         };
     }
     render() {
-        if(this.state.bundles[0] != undefined) {
-          console.log("Hello", this.state.bundles[0].name);
-        }
         return (
-          <div></div>
+            <BundlesProvider value={ this.state.bundles }>
+                <BundleListView />
+            </BundlesProvider>
         );
     }
 };

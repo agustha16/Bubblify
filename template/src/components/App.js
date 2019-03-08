@@ -4,7 +4,9 @@ import NavigationBar from "./NavigationBar/NavigationBar";
 import BubbleList from "./BubbleList/BubbleList";
 import BubbleDetail from "./BubbleDetail/BubbleDetail";
 import BundleList from "./BundleList/BundleList";
+import BundleDetail from "./BundleDetail/BundleDetail";
 import About from "./About/About";
+import Cart from "./Cart/Cart";
 
 const App = () => {
     return (
@@ -16,9 +18,9 @@ const App = () => {
                     <Route exact path ="/bubbles" component={ BubbleList } />
                     <Route exact path ="/bubbles/:bubbleId" component={ BubbleDetail } />
                     <Route exact path="/bundles" component={ BundleList } />
-                    <Route exact path="/bundles/:bundleId" component={ About } />
+                    <Route exact path="/bundles/:bundleId" component={ BundleDetail } />
                     <Route exact path="/about" component={ About } />
-                    <Route exact path="/cart" component={ About } />
+                    <Route exact path="/cart" component={ Cart } />
                 </Switch>
             </div>
         </div>

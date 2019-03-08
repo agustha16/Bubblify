@@ -5,12 +5,14 @@ import bubbleService from "../../services/bubbleService";
 
 class BubbleDetail extends React.Component {
     componentDidMount() {
-        bubbleService.getBubbleById(this.props.match.params.bubbleId).then(data => this.setState({ bubbleItem: data }));;
+        var getId = this.props.bubbleId !== undefined ? this.props.bubbleId : this.props.match.params.bubbleId;
+        bubbleService.getBubbleById(getId).then(data => this.setState({ bubbleItem: data, bundle: true }));;
     }
     constructor(props) {
         super(props);
         this.state = {
-            bubbleItem: {}
+            bubbleItem: {},
+            bundle: false
         };
     }
     render() {
@@ -19,11 +21,17 @@ class BubbleDetail extends React.Component {
                 <h1>404 NOT FOUND</h1>
             );
         }
-        return (
-            <div className="sub-container">
+        if (this.state.bundle) {
+            return (
                 <ListViewItem key={ this.state.bubbleItem.id } { ...this.state.bubbleItem } />
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div className="sub-container">
+                    <ListViewItem key={ this.state.bubbleItem.id } { ...this.state.bubbleItem } />
+                </div>
+            );
+        }
     }
 };
 

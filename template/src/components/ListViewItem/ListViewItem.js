@@ -14,6 +14,13 @@ const ListViewItem = (props) => {
             <div className="card-footer text-muted">
               Price: { price } kr.
             </div>
+            <button type="button" className="btn btn-success" onClick={
+                function buyItem() {
+                    var cart = JSON.parse(localStorage.getItem('cart'));
+                    cart.push({ id: props.id, name: name, price: price });
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                }
+             } >Buy</button>
         </div>
     );
 };

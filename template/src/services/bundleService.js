@@ -1,5 +1,5 @@
-const getAllBubbles = () => {
-    return fetch("http://localhost:3500/api/bubbles").then(resp => {
+const getAllBundles = () => {
+    return fetch("http://localhost:3500/api/bundles").then(resp => {
         if (resp.ok) {
             return resp.json();
         }
@@ -11,8 +11,8 @@ const getAllBubbles = () => {
     });
 };
 
-const getBubbleById = (id) => {
-    return fetch("http://localhost:3500/api/bubbles/" + id).then(resp => {
+const getBundleById = (id) => {
+    return fetch("http://localhost:3500/api/bundles/" + id).then(resp => {
         if (resp.ok) {
             return resp.json();
         }
@@ -25,6 +25,6 @@ const getBubbleById = (id) => {
 };
 
 export default {
-  getAllBubbles,
-  getBubbleById
+  getAllBundles,
+  getBundleById
 };
